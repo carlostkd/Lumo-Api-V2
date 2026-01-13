@@ -238,7 +238,7 @@ curl http://localhost:3333 \
 cat debug.json
 ```
 
-Fake raw data but is like this how the log looks like:
+Here’s an example of how the log looks with fake raw data.
 
 ```
 "Prompt":{"type":"generation_request","turns":[{"role":"user","content":"W8DyNAHDsJf2H6oQ",
@@ -270,7 +270,7 @@ curl http://localhost:3333 \
 - Just wait and try again
 
 
-Now you are Mater in Proton APIS
+Now you are Master in Proton APIS
 
 Lumo API and VPN API are now married you get encrypted love and secure connections out of the box!
 
