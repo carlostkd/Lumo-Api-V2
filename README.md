@@ -51,7 +51,7 @@ This instruction is critical for the security of your account!
 Run the file generate_auth.js
 
 ```bash
-bash generate_auth.js
+node generate_auth.js
 ```
 
 This file opens the Browser with  the Lumo webpage
@@ -63,7 +63,9 @@ Return to terminal you will see
 Opening Lumo…
 
 👉 Log in manually in the browser window.
+
 👉 Once you see Lumo chat UI, come back here.
+
 👉 Press ENTER in this terminal to save session.
 
 Just do it press enter
@@ -91,6 +93,7 @@ The app shows you a indicator which mode are running
 💬 Normal mode (ghost disabled)
 ✅ Lumo UI ready
 🐈 Lumo API V2 running on http://localhost:3333
+🌐 Web search disabled
 
 ```
 
@@ -131,7 +134,7 @@ curl http://localhost:3333 \
 
 
 ```
-Current Weather In Zurich
+
 Carlos, here's the latest weather for Zurich, Switzerland:
 Temperature: 2.7 °C
 Feels Like: 0.1 °C
@@ -168,7 +171,7 @@ curl http://localhost:3333 \
   -X POST \
   -H 'Content-Type: application/json' \
   -d '{"prompt":"What is the weather in Zurich?"}' 
-	```
+```
 
 
 ```
@@ -181,14 +184,20 @@ I don’t have live weather data built in. To give you the current conditions in
 But the app also updates you with the status of the webSearch
 
 💬 Normal mode (ghost disabled)
+
 ✅ Lumo UI ready
+
 🐈 Lumo API V2 running on http://localhost:3333
+
 🌐 Web search disabled
 
 
 💬 Normal mode (ghost disabled)
+
 ✅ Lumo UI ready
+
 🐈 Lumo API V2 running on http://localhost:3333
+
 🌐 Web search enabled
 
 
@@ -212,7 +221,9 @@ cat lumo_logs.json
 
 
 
-For Developers or people who are curuous abot Lumo Encryption i create a debug command
+For developers or anyone who’s nosy about Lumo’s encryption I’ve cooked up a handy debug command. 
+
+(Think of it as the “peek‑aboo” feature for the crypto‑wizard inside.)
 
 ```
 curl http://localhost:3333 \
@@ -225,16 +236,16 @@ curl http://localhost:3333 \
 cat debug.json
 ```
 
-**Fake raw data but is like this how the log looks like:
+Fake raw data but is like this how the log looks like:
 
-
+```
 "Prompt":{"type":"generation_request","turns":[{"role":"user","content":"W8DyNAHDsJf2H6oQ",
   "encrypted":true}],"options":{"tools":["proton_info"]},"targets":["title","message"],"request_key":"wV4D598Sio/F3gQSAQdAG37c1Ls3hiuhaY=","request_id":"6ddtsrdsa5f-3235-41be-edc"}}
 ```
 
 
 
-###NOTE : The debug commands takes a little longer to get answer
+NOTE : The debug commands takes a little longer to get answer
 
 
 
@@ -255,6 +266,15 @@ curl http://localhost:3333 \
 - The first prompt sometimes fails or is truncated
    - Cause: Slow network or lumo takes longer to load 
 - Just wait and try again
+
+
+## 🙏 Support the Project
+
+If you find Lumo API useful, consider buying me a coffee (or a whole espresso machine). 
+
+Your donation helps keep the AI sharp, the jokes fresh, and the servers humming.  
+
+[Donate Here ➡️](https://donate.stripe.com/8wM6pe9DD99xgAofYZ?locale=en&__embed_source=buy_btn_1Oi3L8AtK4E7C1uiKA4WkkML)
 
 ### Contributing 💡
 
