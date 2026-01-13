@@ -270,6 +270,12 @@ curl http://localhost:3333 \
 - Just wait and try again
 
 
+Now you are Mater in Proton APIS
+
+Lumo API and VPN API are now married you get encrypted love and secure connections out of the box!
+
+Did you tried the vpm api? [Give a Try](https://github.com/carlostkd/proton-vpn-api)
+
 ## 🙏 Support the Project
 
 If you find Lumo API useful, consider buying me a coffee (or a whole espresso machine). 
