@@ -1,5 +1,7 @@
 #  Lumo API V2 
 
+<img src="https://pmecdn.protonweb.com/image-transformation/?s=s&image=Lumo_OG_b782facdaf.png" width="300" height="150" />
+
 ## Introduction
 I`m proud to announce the public release of **Lumo API V2**.
 
