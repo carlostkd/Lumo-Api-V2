@@ -17,6 +17,8 @@ Whats new ? API V1 vs API V2
 
 | Feature | AIP V1 | API V2 |
 |---------|-------|-------|
+| Headless browser | ❌  No | ✅ Yes |
+| Projects | ✅ yes | ❌  No (maybe)|
 | File Upload | ✅ yes | ❌  No |
 | Websearch   | ✅ Yes | ✅ Yes |
 | Ghost Mode    | ✅ Yes | ✅ Yes but session only |
