@@ -272,6 +272,11 @@ curl http://localhost:3333 \
 - Just wait and try again
 
 
+### When you dont use the api consider to delete the auth.json
+
+```javascript
+shred  -n 3 -z -u auth.json
+``` 
 Now you are Master in Proton APIS
 
 Lumo API and VPN API are now married you get encrypted love and secure connections out of the box!
