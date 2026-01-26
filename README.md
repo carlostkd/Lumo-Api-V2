@@ -1,5 +1,7 @@
 #  Lumo API V2 
 
+### NEW Introducing [Lumo Chat](https://github.com/carlostkd/lumo-chat)
+
 <img src="https://pmecdn.protonweb.com/image-transformation/?s=s&image=Lumo_OG_b782facdaf.png" width="300" height="150" />
 
 ## Introduction
