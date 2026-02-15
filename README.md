@@ -267,11 +267,136 @@ curl http://localhost:3333 \
 ```
 
 
+---
+
+## OpenAI-Compatible Bridge 🤖
+
+Lumo API now includes an **OpenAI-compatible bridge** that allows you to use Lumo with existing OpenAI clients, SDKs, and integrations.
+
+### Features
+
+- **Drop-in replacement** for OpenAI API clients
+- **Compatible endpoints**: `/v1/chat/completions`, `/v1/models`
+- **Streaming support** (simulated for compatibility)
+- **Bearer token authentication**
+- **Automatic Lumo server management**
+
+### How it works
+
+The bridge:
+1. Automatically launches `lumo.js` in the background
+2. Exposes an OpenAI-compatible API on port **3334**
+3. Translates OpenAI requests to Lumo format and back
+
+### Quick Start
+
+```bash
+node lumo-oaic.js
+```
+
+Or with ghost mode:
+
+```bash
+node lumo-oaic.js ghost:true
+```
+
+You'll see:
+
+```
+╔════════════════════════════════════════════════════════╗
+║           Lumo-Ollama Bridge v1.0                      ║
+╠════════════════════════════════════════════════════════╣
+║  OpenAI-compatible endpoint for Lumo API               ║
+╚════════════════════════════════════════════════════════╝
+
+🚀 Starting Lumo API...
+✅ Lumo UI ready
+✅ Lumo API is ready
+
+🌉 Bridge server running
+
+Endpoints:
+  • OpenAI API:  http://localhost:3334/v1/chat/completions
+  • Models:      http://localhost:3334/v1/models
+  • Health:      http://localhost:3334/health
+```
+
+### Available Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/v1/chat/completions` | POST | OpenAI-compatible chat completions |
+| `/v1/models` | GET | List available models (returns "lumo") |
+| `/health` | GET | Health check endpoint |
+
+### Using with curl
+
+```bash
+curl http://localhost:3334/v1/chat/completions \
+  -X POST \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "model": "lumo",
+    "messages": [
+      {"role": "user", "content": "What is the weather in Zurich?"}
+    ],
+    "web_search": true
+  }'
+```
+
+### Using with OpenCode
+
+Configure OpenCode to use the bridge endpoint by adding the following to your OpenCode configuration file:
+
+```json
+{
+  "provider": {
+    "lumo": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Lumo (local api)",
+      "options": {
+        "baseURL": "http://localhost:3334/v1"
+      },
+      "models": {
+	      "lumo/lumo": {
+	      "name": "Lumo local API"
+	    }
+    }
+  }
+}
+```
+
+### Features
+
+- **Automatic startup**: The bridge launches Lumo automatically
+- **Argument passthrough**: Pass `ghost:true` to enable ghost mode
+- **Web search support**: Use `"web_search": true` in requests
+- **Streaming support**: Supports both streaming and non-streaming responses
+- **Graceful shutdown**: Press Ctrl+C to stop both servers cleanly
+
+### Health Check
+
+```bash
+curl http://localhost:3334/health
+```
+
+Response:
+```json
+{
+  "status": "healthy",
+  "lumo": "connected",
+  "timestamp": "2026-01-15T10:30:00.000Z"
+}
+```
+
+---
+
 ### Know 🐞 bugs
 
 - The first prompt sometimes fails or is truncated
-   - Cause: Slow network or lumo takes longer to load 
-- Just wait and try again
+  - Cause: Slow network or lumo takes longer to load 
+  - Solution: Just wait and try again
+- File upload is not yet supported
 
 
 ### When you dont use the api consider to delete the auth.json
